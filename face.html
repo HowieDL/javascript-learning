@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>JavaScript Week 1</title>
+
+      	<script type="text/javascript">
+        	  var username;
+
+        	  function hello() {
+          	    alert("hello");
+        	  }
+
+        	  function hello2() {
+          	    if (username) {
+            	    alert("Welcome back " + username);
+          	    } else {
+          	      username = prompt("Hello!! What is your name?");
+              		if (username) {
+            		    alert("Hi " + username + ". Nice to meet you!");
+              		}
+          	    }
+        	  }
+
+        	  function smile(){
+        	      document.getElementById("smiley").src="images/myFace_smile.png";
+          	    document.getElementById("smileText").innerHTML="I'm happy again!";
+        	  }
+
+        	  function reset(){
+          	    document.getElementById("smiley").src="images/myFace.png";
+          	    document.getElementById("smileText").innerHTML="I'm sad now...";
+        	  }
+      	</script>
+    </head>
+
+  <body>
+      <p><a href="javascript:hello()">hello</a></p>
+      <p><a href="javascript:hello2()">hello again!</a></p>
+
+      <p><img src="images/myFace.png" id="smiley" onclick="smile()"/></p>
+      <p id="smileText">I'm sad now...</p>
+      <p><a href="javascript:reset()">reset</a></p>
+
+
+  </body>
+</html>
