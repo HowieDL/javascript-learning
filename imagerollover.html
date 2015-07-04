@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Product Rollover Image</title>
+        <!--Create an online shopping style preview pane to show the product as a larger image when the mouse hovers over its thumbnails -->
+        <style>
+            .preview {
+                width: 600px;
+                height: 600px;
+            }
+
+            .thumb {
+                width: 190px;
+                margin-right: 4px;
+            }
+
+            .normal {
+                border: 3px solid black;
+            }
+
+            .selected {
+                border: 3px solid red;
+            }
+        </style>
+    </head>
+
+    <body>
+        <img id="main" class="preview normal" src=""/>
+        <br>
+        <img id="thumbleft" class="thumb normal" src="images/Front.jpg" onmouseover="preview(this)"/>
+        <img id="thumbmid" class="thumb normal" src="images/Side.jpg" onmouseover="preview(this)"/>
+        <img id="thumbright" class="thumb normal" src="images/Back.jpg" onmouseover="preview(this)"/>
+
+        <script>
+            var defImg = "thumbleft";
+            document.getElementById("main").src = document.getElementById(defImg).src;
+            document.getElementById(defImg).className = "thumb selected";
+
+            function preview(img) {
+                document.getElementById(defImg).className = "thumb normal";
+                img.className = "thumb selected";
+                document.getElementById("main").src = img.src;
+                defImg = img.id
+            }
+        </script>
+    </body>
+</html>
