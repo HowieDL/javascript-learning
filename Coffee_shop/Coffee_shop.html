@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+		<head>
+				<title>Coffeeshop Billing</title>
+
+				<script type="text/javascript" src="js/coffeeshop.js">
+
+				</script>
+		</head>
+
+		<body>
+		<h1>Coffee Shop</h1>
+		<h3>Please place your order</h3>
+				<form>
+					<p>
+						<label>name: </label>
+				    <input type="text" id="name"/>
+					</p>
+
+			    <p>
+			    	<label>number of coffees (&#163;2.00)</label>
+			      <input type="text" id="numCoffees"/>
+			    </p>
+
+			    <p>
+			    	<label>number of teas (&#163;1.50)</label>
+			        <input type="text" id="numTeas"/>
+			    </p>
+				</form>
+
+		    <p>
+		    	<button onclick="updateOrder()">submit order</button>
+		    </p>
+
+		    <p>
+		    	<span>subtotal: &#163;</span><span id="subTotalValue">0</span>
+				<!-- use &#163; -->
+		    </p>
+
+		    <p>
+		    	<span>tax: &#163;</span><span id="taxValue">0</span>
+		    </p>
+
+		    <p>
+		    	<span>total: &#163;</span><span id="totalValue">0</span>
+		    </p>
+
+
+
+		</body>
+</html>
