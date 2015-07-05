@@ -2,18 +2,69 @@
     <head>
         <title>Random Dice Rolls</title>
 
-        <script type="text/javascript">
-            var roll1 = Math.floor(Math.random()*6) + 1;
-            var roll2 = Math.floor(Math.random()*6) + 1;
+        <style>
+            button {
+              width: 100px;
+              height: 25px;
+            }
 
-            document.write("<img src='images/die" + roll1 + ".gif' alt='die showing " + roll1 + "' />")
-            document.write("&nbsp;&nbsp;")
+            p {
+              text-align: center;
+            }
 
-            document.write("<img src='images/die" + roll2 + ".gif' alt='die showing " + roll2 + "' />")
-        </script>
+            #box{
+              width: 500px;
+              height: 400px;
+              margin-left: auto;
+              margin-right: auto;
+              background-color: silver;
+              border: 2px solid black;
+              border-radius: 5px;
+            }
+
+            #dice{
+              display: block;
+              width: 304px;
+              /background-color: blue;
+              margin-left: auto;
+              margin-right: auto;
+              padding-top: 70px;
+              padding-bottom: 20px;
+
+            }
+
+            #roll{
+              clear: both;
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+            }
+
+        </style>
     </head>
 
     <body>
-        
+        <div id="box">
+            <div id="dice">
+                <img id="die1" src="images/die1.gif"/>
+                <img id="die2" src="images/die6.gif"/>
+            </div>
+
+            <div id="roll">
+              <p>
+      		    	<button onclick="rollDice()">Click to Roll</button>
+      		    </p>
+            </div>
+        </div>
     </body>
+
+
+    <script type="text/javascript">
+        function rollDice() {
+            var roll1 = Math.floor(Math.random()*6) + 1;
+            var roll2 = Math.floor(Math.random()*6) + 1;
+            document.getElementById("die1").src = "images/die" + roll1 + ".gif";
+            document.getElementById("die2").src = "images/die" + roll2 + ".gif";
+        }
+    </script>
 </html>
