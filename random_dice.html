@@ -43,28 +43,32 @@
         </style>
     </head>
 
-    <body>
+    <body onload="rollDice()">
         <div id="box">
             <div id="dice">
-                <img id="die1" src="images/die1.gif"/>
-                <img id="die2" src="images/die6.gif"/>
+                <img id="die1" src=""/>
+                <img id="die2" src=""/>
             </div>
+
+            <script type="text/javascript">
+                function rollDice() {
+                    var roll1 = Math.floor(Math.random()*6) + 1;
+                    var roll2 = Math.floor(Math.random()*6) + 1;
+                    document.getElementById("die1").src = "images/die" + roll1 + ".gif";
+                    document.getElementById("die2").src = "images/die" + roll2 + ".gif";
+                }
+
+
+            </script>
 
             <div id="roll">
               <p>
-      		    	<button onclick="rollDice()">Click to Roll</button>
-      		    </p>
+                <button onclick="rollDice()">Click to Roll</button>
+              </p>
             </div>
         </div>
     </body>
 
 
-    <script type="text/javascript">
-        function rollDice() {
-            var roll1 = Math.floor(Math.random()*6) + 1;
-            var roll2 = Math.floor(Math.random()*6) + 1;
-            document.getElementById("die1").src = "images/die" + roll1 + ".gif";
-            document.getElementById("die2").src = "images/die" + roll2 + ".gif";
-        }
-    </script>
+
 </html>
